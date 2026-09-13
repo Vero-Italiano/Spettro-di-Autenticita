@@ -17,7 +17,45 @@
     --red-it:#b7312c;
     --red-light:#fbe7e6;
     --white-it:#ffffff;
+    --panel-bg:#f1efe9;
+    --example-bg:#f5f2ec;
+    --n3-tag-bg:#f2f3e2; --n3-tag-text:#6b7a34;
+    --n5-tag-bg:#fbeee0; --n5-tag-text:#c9772f;
+    --n6-tag-bg:#fbe2dd; --n6-tag-text:#c14f38;
+    --lab-grad-1:#fdf9ec; --lab-grad-2:#f7f0dc;
+    --lab-title-text:#7a5a1a; --lab-desc-text:#6b5a35;
+    --lab-mode-bg:#fffdf7; --lab-mode-border:#e8d9ad; --lab-mode-text:#5c4a25;
+    --lab-note-border:#c9a03a;
+    --doc-stream-bg:#eef2ef; --doc-stream-border:#d8e2dc;
+    --sat-stream-bg:#eef4f8; --sat-stream-border:#d6e6ef; --sat-color:#2c6b8a;
+    --engine-grad-1:#faf6ee; --engine-grad-2:#f5f0e4;
     --shadow:0 4px 18px rgba(31,42,36,0.08);
+  }
+  html[data-theme="dark"]{
+    --bg:#14201a;
+    --card-bg:#1c2b23;
+    --ink:#eef2ee;
+    --muted:#9fb0a5;
+    --line:#2e4136;
+    --green:#4f9464;
+    --green-light:#22362a;
+    --gold:#d9a94b;
+    --gold-light:#3a2f18;
+    --red-it:#e2665f;
+    --red-light:#3a2220;
+    --panel-bg:#233229;
+    --example-bg:#20302a;
+    --n3-tag-bg:#2b331e; --n3-tag-text:#c3d38a;
+    --n5-tag-bg:#3a2c1a; --n5-tag-text:#e0a668;
+    --n6-tag-bg:#3a231f; --n6-tag-text:#e58f74;
+    --lab-grad-1:#2b2412; --lab-grad-2:#241d0e;
+    --lab-title-text:#e6c477; --lab-desc-text:#cbb98a;
+    --lab-mode-bg:#241f14; --lab-mode-border:#4a3d1e; --lab-mode-text:#d8c99a;
+    --lab-note-border:#8a6a24;
+    --doc-stream-bg:#1c2b24; --doc-stream-border:#2e4136;
+    --sat-stream-bg:#1a2933; --sat-stream-border:#2a3f4a; --sat-color:#7ec3e8;
+    --engine-grad-1:#2b3a2c; --engine-grad-2:#25321f;
+    --shadow:0 4px 18px rgba(0,0,0,0.35);
   }
   *{box-sizing:border-box;}
   body{
@@ -26,11 +64,15 @@
     background:var(--bg);
     color:var(--ink);
     padding:40px 24px 80px;
+    transition:background .15s ease, color .15s ease;
   }
   .wrap{max-width:1120px;margin:0 auto;}
   header{text-align:center;margin-bottom:8px;position:relative;}
+  .controls{
+    position:absolute;top:0;right:0;display:flex;gap:8px;align-items:center;
+  }
   .lang-switch{
-    position:absolute;top:0;right:0;display:flex;gap:4px;background:#fff;border:1px solid var(--line);
+    display:flex;gap:4px;background:var(--card-bg);border:1px solid var(--line);
     border-radius:20px;padding:3px;box-shadow:var(--shadow);
   }
   .lang-switch button{
@@ -38,6 +80,10 @@
     cursor:pointer;color:var(--muted);letter-spacing:.03em;
   }
   .lang-switch button.active{background:var(--green);color:#fff;}
+  .theme-toggle{
+    border:1px solid var(--line);background:var(--card-bg);border-radius:20px;padding:7px 12px;
+    font-size:13px;cursor:pointer;box-shadow:var(--shadow);color:var(--ink);
+  }
   .flagbar{height:4px;width:80px;margin:0 auto 20px;background:linear-gradient(90deg,var(--green) 0 33%, var(--white-it) 33% 66%, var(--red-it) 66% 100%);border-radius:2px;}
   h1{font-size:28px;margin:0 0 6px;letter-spacing:-0.01em;}
   .subtitle{color:var(--muted);font-size:15px;max-width:720px;margin:0 auto 12px;line-height:1.5;}
@@ -69,9 +115,9 @@
   .tier-title{font-size:16.5px;font-weight:700;margin:0 0 4px;}
   .tier-desc{color:var(--muted);font-size:13.5px;line-height:1.55;margin:0 0 10px;}
   .flags{font-size:12.5px;color:var(--ink);margin:0 0 4px;}
-  .flags span{display:inline-block;background:#f1efe9;border-radius:6px;padding:2px 7px;margin:0 4px 4px 0;font-size:11.5px;color:var(--muted);}
+  .flags span{display:inline-block;background:var(--panel-bg);border-radius:6px;padding:2px 7px;margin:0 4px 4px 0;font-size:11.5px;color:var(--muted);}
   .example{
-    background:#f5f2ec;border-radius:10px;padding:12px 14px;font-size:12.5px;
+    background:var(--example-bg);border-radius:10px;padding:12px 14px;font-size:12.5px;
     color:var(--ink);line-height:1.55;
   }
   .example strong{display:block;color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px;}
@@ -79,10 +125,10 @@
   /* tier color coding: 1 strongest -> 7 weakest */
   .n1 .tier-num{background:#1f6b3a;} .n1 .tier-tag{background:var(--green-light);color:var(--green);}
   .n2 .tier-num{background:#4c8a5c;} .n2 .tier-tag{background:var(--green-light);color:var(--green);}
-  .n3 .tier-num{background:#8a9a52;} .n3 .tier-tag{background:#f2f3e2;color:#6b7a34;}
+  .n3 .tier-num{background:#8a9a52;} .n3 .tier-tag{background:var(--n3-tag-bg);color:var(--n3-tag-text);}
   .n4 .tier-num{background:var(--gold);} .n4 .tier-tag{background:var(--gold-light);color:var(--gold);}
-  .n5 .tier-num{background:#c9772f;} .n5 .tier-tag{background:#fbeee0;color:#c9772f;}
-  .n6 .tier-num{background:#c14f38;} .n6 .tier-tag{background:#fbe2dd;color:#c14f38;}
+  .n5 .tier-num{background:#c9772f;} .n5 .tier-tag{background:var(--n5-tag-bg);color:var(--n5-tag-text);}
+  .n6 .tier-num{background:#c14f38;} .n6 .tier-tag{background:var(--n6-tag-bg);color:var(--n6-tag-text);}
   .n7 .tier-num{background:var(--red-it);} .n7 .tier-tag{background:var(--red-light);color:var(--red-it);}
 
   /* fraud section */
@@ -104,7 +150,7 @@
 
   /* premium lab badge section */
   .lab-badge-section{
-    background:linear-gradient(135deg,#fdf9ec,#f7f0dc);border:1.5px solid var(--gold);border-radius:16px;
+    background:linear-gradient(135deg,var(--lab-grad-1),var(--lab-grad-2));border:1.5px solid var(--gold);border-radius:16px;
     box-shadow:var(--shadow);padding:26px 28px;
   }
   .lab-badge-top{display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;}
@@ -112,13 +158,13 @@
     width:52px;height:52px;border-radius:50%;background:var(--gold);color:#fff;flex-shrink:0;
     display:flex;align-items:center;justify-content:center;font-size:24px;
   }
-  .lab-badge-title{font-size:17px;font-weight:700;margin:0 0 4px;color:#7a5a1a;}
-  .lab-badge-desc{font-size:13.5px;color:#6b5a35;line-height:1.55;margin:0;}
+  .lab-badge-title{font-size:17px;font-weight:700;margin:0 0 4px;color:var(--lab-title-text);}
+  .lab-badge-desc{font-size:13.5px;color:var(--lab-desc-text);line-height:1.55;margin:0;}
   .lab-modes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;}
-  .lab-mode{background:#fffdf7;border:1px solid #e8d9ad;border-radius:10px;padding:14px 16px;font-size:12.5px;line-height:1.5;color:#5c4a25;}
-  .lab-mode strong{display:block;font-size:12.5px;color:#7a5a1a;margin-bottom:4px;}
+  .lab-mode{background:var(--lab-mode-bg);border:1px solid var(--lab-mode-border);border-radius:10px;padding:14px 16px;font-size:12.5px;line-height:1.5;color:var(--lab-mode-text);}
+  .lab-mode strong{display:block;font-size:12.5px;color:var(--lab-title-text);margin-bottom:4px;}
   .lab-note{
-    background:#fffdf7;border:1px dashed #c9a03a;border-radius:10px;padding:12px 14px;font-size:12px;color:#6b5a35;line-height:1.55;
+    background:var(--lab-mode-bg);border:1px dashed var(--lab-note-border);border-radius:10px;padding:12px 14px;font-size:12px;color:var(--lab-desc-text);line-height:1.55;
   }
 
   /* verification engine section */
@@ -133,22 +179,22 @@
   .stream h4{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.04em;display:flex;align-items:center;gap:8px;}
   .stream ul{margin:0;padding-left:18px;color:var(--muted);}
   .stream ul li{margin-bottom:3px;}
-  .doc-stream{background:#eef2ef;border:1px solid #d8e2dc;}
+  .doc-stream{background:var(--doc-stream-bg);border:1px solid var(--doc-stream-border);}
   .doc-stream h4{color:var(--green);}
-  .sat-stream{background:#eef4f8;border:1px solid #d6e6ef;}
-  .sat-stream h4{color:#2c6b8a;}
+  .sat-stream{background:var(--sat-stream-bg);border:1px solid var(--sat-stream-border);}
+  .sat-stream h4{color:var(--sat-color);}
   .stream-icon{
     width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
     font-size:12px;color:#fff;flex-shrink:0;
   }
   .doc-stream .stream-icon{background:var(--green);}
-  .sat-stream .stream-icon{background:#2c6b8a;}
+  .sat-stream .stream-icon{background:var(--sat-color);}
   .engine-arrow{
     display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted);font-size:22px;
   }
   .reconcile-box{
     grid-column:1 / -1;
-    background:linear-gradient(135deg,#faf6ee,#f5f0e4);
+    background:linear-gradient(135deg,var(--engine-grad-1),var(--engine-grad-2));
     border:1.5px dashed var(--gold);border-radius:12px;
     padding:18px 22px;text-align:center;margin-top:4px;
   }
@@ -163,7 +209,7 @@
   .catches h4{font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 0 10px;}
   .catch-tags{display:flex;flex-wrap:wrap;gap:8px;}
   .catch-tags span{
-    background:#f1efe9;border-radius:20px;padding:6px 12px;font-size:12px;color:var(--ink);
+    background:var(--panel-bg);border-radius:20px;padding:6px 12px;font-size:12px;color:var(--ink);
     border:1px solid var(--line);
   }
 
@@ -172,16 +218,19 @@
     .engine-flow{grid-template-columns:1fr;}
     .engine-arrow{transform:rotate(90deg);padding:6px 0;}
     .outcomes{grid-template-columns:1fr;}
-    .lang-switch{position:static;justify-content:center;margin-bottom:16px;}
+    .controls{position:static;justify-content:center;margin-bottom:16px;}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="lang-switch">
-      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
-      <button id="btn-it" onclick="setLang('it')">IT</button>
+    <div class="controls">
+      <div class="lang-switch">
+        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        <button id="btn-it" onclick="setLang('it')">IT</button>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">&#127769;</button>
     </div>
     <div class="flagbar"></div>
     <h1 data-i18n="h1"></h1>
@@ -600,6 +649,21 @@ function setLang(lang){
   document.documentElement.setAttribute('lang', lang);
 }
 setLang('en');
+
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  document.getElementById('theme-toggle').innerHTML = theme === 'dark' ? '&#9728;&#65039;' : '&#127769;';
+  try{ localStorage.setItem('vi-theme', theme); }catch(e){}
+}
+function toggleTheme(){
+  var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+}
+(function(){
+  var saved = 'light';
+  try{ saved = localStorage.getItem('vi-theme') || 'light'; }catch(e){}
+  applyTheme(saved);
+})();
 </script>
 </body>
 </html>
