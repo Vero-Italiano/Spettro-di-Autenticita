@@ -101,13 +101,14 @@
     grid-template-columns:52px 1.3fr 1fr;
     gap:20px;
     align-items:start;
+    scroll-margin-top:24px;
   }
   .tier-num{
-    width:40px;height:40px;border-radius:50%;
+    width:48px;height:54px;
     display:flex;align-items:center;justify-content:center;
-    font-weight:700;font-size:16px;color:#fff;
     margin-top:2px;
   }
+  .tier-num svg{display:block;}
   .tier-tag{
     display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;
     text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:8px;
@@ -123,13 +124,13 @@
   .example strong{display:block;color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px;}
 
   /* tier color coding: 1 strongest -> 7 weakest */
-  .n1 .tier-num{background:#1f6b3a;} .n1 .tier-tag{background:var(--green-light);color:var(--green);}
-  .n2 .tier-num{background:#4c8a5c;} .n2 .tier-tag{background:var(--green-light);color:var(--green);}
-  .n3 .tier-num{background:#8a9a52;} .n3 .tier-tag{background:var(--n3-tag-bg);color:var(--n3-tag-text);}
-  .n4 .tier-num{background:var(--gold);} .n4 .tier-tag{background:var(--gold-light);color:var(--gold);}
-  .n5 .tier-num{background:#c9772f;} .n5 .tier-tag{background:var(--n5-tag-bg);color:var(--n5-tag-text);}
-  .n6 .tier-num{background:#c14f38;} .n6 .tier-tag{background:var(--n6-tag-bg);color:var(--n6-tag-text);}
-  .n7 .tier-num{background:var(--red-it);} .n7 .tier-tag{background:var(--red-light);color:var(--red-it);}
+  .n1 .tier-tag{background:var(--green-light);color:var(--green);}
+  .n2 .tier-tag{background:var(--green-light);color:var(--green);}
+  .n3 .tier-tag{background:var(--n3-tag-bg);color:var(--n3-tag-text);}
+  .n4 .tier-tag{background:var(--gold-light);color:var(--gold);}
+  .n5 .tier-tag{background:var(--n5-tag-bg);color:var(--n5-tag-text);}
+  .n6 .tier-tag{background:var(--n6-tag-bg);color:var(--n6-tag-text);}
+  .n7 .tier-tag{background:var(--red-light);color:var(--red-it);}
 
   /* fraud section */
   .fraud-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
@@ -241,8 +242,8 @@
   <p class="section-sub" data-i18n="s1.sub"></p>
 
   <div class="ladder">
-    <div class="tier n1">
-      <div class="tier-num">1</div>
+    <div class="tier n1" id="tier-a">
+      <div class="tier-num"><svg viewBox="0 0 64 72" width="48" height="54"><path d="M32 2 L60 12 L60 34 C60 54 48 66 32 70 C16 66 4 54 4 34 L4 12 Z" fill="#1f6b3a" stroke="#1f2a24" stroke-opacity="0.15" stroke-width="2"/><text x="32" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff" font-family="-apple-system,Helvetica,Arial,sans-serif">A</text></svg></div>
       <div>
         <span class="tier-tag" data-i18n="t1.tag"></span>
         <h3 class="tier-title" data-i18n="t1.title"></h3>
@@ -252,8 +253,8 @@
       <div class="example" data-i18n="t1.example"></div>
     </div>
 
-    <div class="tier n2">
-      <div class="tier-num">2</div>
+    <div class="tier n2" id="tier-b">
+      <div class="tier-num"><svg viewBox="0 0 64 72" width="48" height="54"><path d="M32 2 L60 12 L60 34 C60 54 48 66 32 70 C16 66 4 54 4 34 L4 12 Z" fill="#4c8a5c" stroke="#1f2a24" stroke-opacity="0.15" stroke-width="2"/><text x="32" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff" font-family="-apple-system,Helvetica,Arial,sans-serif">B</text></svg></div>
       <div>
         <span class="tier-tag" data-i18n="t2.tag"></span>
         <h3 class="tier-title" data-i18n="t2.title"></h3>
@@ -263,8 +264,8 @@
       <div class="example" data-i18n="t2.example"></div>
     </div>
 
-    <div class="tier n3">
-      <div class="tier-num">3</div>
+    <div class="tier n3" id="tier-c">
+      <div class="tier-num"><svg viewBox="0 0 64 72" width="48" height="54"><path d="M32 2 L60 12 L60 34 C60 54 48 66 32 70 C16 66 4 54 4 34 L4 12 Z" fill="#8a9a52" stroke="#1f2a24" stroke-opacity="0.15" stroke-width="2"/><text x="32" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff" font-family="-apple-system,Helvetica,Arial,sans-serif">C</text></svg></div>
       <div>
         <span class="tier-tag" data-i18n="t3.tag"></span>
         <h3 class="tier-title" data-i18n="t3.title"></h3>
@@ -274,8 +275,8 @@
       <div class="example" data-i18n="t3.example"></div>
     </div>
 
-    <div class="tier n4">
-      <div class="tier-num">4</div>
+    <div class="tier n4" id="tier-d">
+      <div class="tier-num"><svg viewBox="0 0 64 72" width="48" height="54"><path d="M32 2 L60 12 L60 34 C60 54 48 66 32 70 C16 66 4 54 4 34 L4 12 Z" fill="#b8862b" stroke="#1f2a24" stroke-opacity="0.15" stroke-width="2"/><text x="32" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff" font-family="-apple-system,Helvetica,Arial,sans-serif">D</text></svg></div>
       <div>
         <span class="tier-tag" data-i18n="t4.tag"></span>
         <h3 class="tier-title" data-i18n="t4.title"></h3>
@@ -285,8 +286,8 @@
       <div class="example" data-i18n="t4.example"></div>
     </div>
 
-    <div class="tier n5">
-      <div class="tier-num">5</div>
+    <div class="tier n5" id="tier-e">
+      <div class="tier-num"><svg viewBox="0 0 64 72" width="48" height="54"><path d="M32 2 L60 12 L60 34 C60 54 48 66 32 70 C16 66 4 54 4 34 L4 12 Z" fill="#c9772f" stroke="#1f2a24" stroke-opacity="0.15" stroke-width="2"/><text x="32" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff" font-family="-apple-system,Helvetica,Arial,sans-serif">E</text></svg></div>
       <div>
         <span class="tier-tag" data-i18n="t5.tag"></span>
         <h3 class="tier-title" data-i18n="t5.title"></h3>
@@ -296,8 +297,8 @@
       <div class="example" data-i18n="t5.example"></div>
     </div>
 
-    <div class="tier n6">
-      <div class="tier-num">6</div>
+    <div class="tier n6" id="tier-f">
+      <div class="tier-num"><svg viewBox="0 0 64 72" width="48" height="54"><path d="M32 2 L60 12 L60 34 C60 54 48 66 32 70 C16 66 4 54 4 34 L4 12 Z" fill="#c14f38" stroke="#1f2a24" stroke-opacity="0.15" stroke-width="2"/><text x="32" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff" font-family="-apple-system,Helvetica,Arial,sans-serif">F</text></svg></div>
       <div>
         <span class="tier-tag" data-i18n="t6.tag"></span>
         <h3 class="tier-title" data-i18n="t6.title"></h3>
@@ -307,8 +308,8 @@
       <div class="example" data-i18n="t6.example"></div>
     </div>
 
-    <div class="tier n7">
-      <div class="tier-num">7</div>
+    <div class="tier n7" id="tier-g">
+      <div class="tier-num"><svg viewBox="0 0 64 72" width="48" height="54"><path d="M32 2 L60 12 L60 34 C60 54 48 66 32 70 C16 66 4 54 4 34 L4 12 Z" fill="#b7312c" stroke="#1f2a24" stroke-opacity="0.15" stroke-width="2"/><text x="32" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff" font-family="-apple-system,Helvetica,Arial,sans-serif">G</text></svg></div>
       <div>
         <span class="tier-tag" data-i18n="t7.tag"></span>
         <h3 class="tier-title" data-i18n="t7.title"></h3>
