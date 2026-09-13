@@ -102,6 +102,25 @@
 
   footer{text-align:center;margin-top:48px;color:var(--muted);font-size:12px;line-height:1.6;}
 
+  /* premium lab badge section */
+  .lab-badge-section{
+    background:linear-gradient(135deg,#fdf9ec,#f7f0dc);border:1.5px solid var(--gold);border-radius:16px;
+    box-shadow:var(--shadow);padding:26px 28px;
+  }
+  .lab-badge-top{display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;}
+  .lab-badge-icon{
+    width:52px;height:52px;border-radius:50%;background:var(--gold);color:#fff;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-size:24px;
+  }
+  .lab-badge-title{font-size:17px;font-weight:700;margin:0 0 4px;color:#7a5a1a;}
+  .lab-badge-desc{font-size:13.5px;color:#6b5a35;line-height:1.55;margin:0;}
+  .lab-modes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;}
+  .lab-mode{background:#fffdf7;border:1px solid #e8d9ad;border-radius:10px;padding:14px 16px;font-size:12.5px;line-height:1.5;color:#5c4a25;}
+  .lab-mode strong{display:block;font-size:12.5px;color:#7a5a1a;margin-bottom:4px;}
+  .lab-note{
+    background:#fffdf7;border:1px dashed #c9a03a;border-radius:10px;padding:12px 14px;font-size:12px;color:#6b5a35;line-height:1.55;
+  }
+
   /* verification engine section */
   .engine{
     background:var(--card-bg);border:1px solid var(--line);border-radius:16px;
@@ -293,6 +312,24 @@
     </div>
   </div>
 
+  <h2 class="section-title" data-i18n="s2b.title"></h2>
+  <p class="section-sub" data-i18n="s2b.sub"></p>
+
+  <div class="lab-badge-section">
+    <div class="lab-badge-top">
+      <div class="lab-badge-icon">&#127942;</div>
+      <div>
+        <h3 class="lab-badge-title" data-i18n="lab.title"></h3>
+        <p class="lab-badge-desc" data-i18n="lab.desc"></p>
+      </div>
+    </div>
+    <div class="lab-modes">
+      <div class="lab-mode"><strong data-i18n="lab.mode1.h"></strong><span data-i18n="lab.mode1.p"></span></div>
+      <div class="lab-mode"><strong data-i18n="lab.mode2.h"></strong><span data-i18n="lab.mode2.p"></span></div>
+    </div>
+    <div class="lab-note" data-i18n="lab.note"></div>
+  </div>
+
   <h2 class="section-title" data-i18n="s3.title"></h2>
   <p class="section-sub" data-i18n="s3.sub"></p>
 
@@ -402,6 +439,16 @@ var translations = {
     "engine.catch3": "Fraud #4, undisclosed origin substitution",
     "engine.catch4": "Volume overstatement beyond real production capacity",
 
+    "s2b.title": "Premium tier: Lab-Verified certification",
+    "s2b.sub": "Documents and satellite data confirm a plausible story. They cannot confirm what is physically inside the package. This optional premium layer adds independent forensic testing on top of any spectrum level.",
+    "lab.title": "Vero Italiano Lab-Verified",
+    "lab.desc": "A distinct, premium badge layered on top of the seven-level spectrum, backed by accredited physical/forensic testing (stable isotope ratio analysis, DNA barcoding, NMR profiling) rather than documents and imagery alone. Requires ISO 17025 (or equivalent) accredited lab partners and a documented chain of custody, so results hold up under dispute.",
+    "lab.mode1.h": "Test-on-demand",
+    "lab.mode1.p": "An importer, or the reconciliation engine itself when a discrepancy is flagged, triggers a lab test on a specific lot. Billed per test plus margin, this gives an importer a concrete result to point to with a skeptical retail buyer.",
+    "lab.mode2.h": "Risk-weighted random testing",
+    "lab.mode2.p": "Certified lots are periodically and unpredictably selected for surprise testing, weighted toward higher-value products and any prior discrepancy history, funded from the subscription/fee pool or by an interested consortium. This is what keeps a certification honest between audits, rather than a one-time check a bad actor can plan around.",
+    "lab.note": "Why accreditation is non-negotiable: in Australia's 2026 Four Corners tomato investigation, the forensic lab behind the fraud findings (Source Certain) was not NATA-accredited, which gave the accused brands (Leggo's/Simplot, Coles, Aldi) an opening to dispute the results on methodology grounds rather than the underlying facts. Vero Italiano's lab partners must be accredited from day one to avoid the same standoff.",
+
     "s3.title": "A separate failure mode: false DOP/IGP compliance",
     "s3.sub": "This cuts across the spectrum above. A product can be genuinely made in Italy from genuine Italian ingredients, and still commit fraud by falsely claiming a protected designation (DOP/IGP/DOC) it doesn't actually meet, or by exploiting the gap between a protected full name and an unprotected generic term.",
 
@@ -498,6 +545,16 @@ var translations = {
     "engine.catch2": "Livello 4, dichiarazioni \"Made in Italy\" basate solo sul confezionamento",
     "engine.catch3": "Frode #4, sostituzione di origine non dichiarata",
     "engine.catch4": "Sovrastima del volume oltre la reale capacita produttiva",
+
+    "s2b.title": "Livello premium: certificazione Lab-Verified",
+    "s2b.sub": "I documenti e i dati satellitari confermano una storia plausibile. Non possono confermare cosa ci sia fisicamente dentro la confezione. Questo livello premium opzionale aggiunge test forensi indipendenti sopra qualsiasi livello dello spettro.",
+    "lab.title": "Vero Italiano Lab-Verified",
+    "lab.desc": "Un marchio premium distinto, sovrapposto allo spettro a sette livelli, basato su test fisici/forensi accreditati (analisi del rapporto isotopico stabile, codice a barre del DNA, profilazione NMR) anziche solo su documenti e immagini. Richiede laboratori partner accreditati ISO 17025 (o equivalente) e una catena di custodia documentata, cosi che i risultati reggano in caso di contestazione.",
+    "lab.mode1.h": "Test su richiesta",
+    "lab.mode1.p": "Un importatore, o il motore di riconciliazione stesso quando viene segnalata una discrepanza, attiva un test di laboratorio su un lotto specifico. Fatturato per test piu un margine, offre all'importatore un risultato concreto da mostrare a un acquirente al dettaglio scettico.",
+    "lab.mode2.h": "Test casuali ponderati per rischio",
+    "lab.mode2.p": "I lotti certificati vengono selezionati periodicamente e in modo imprevedibile per test a sorpresa, con maggiore frequenza per i prodotti di maggior valore e per chi ha una storia di discrepanze pregresse, finanziati dal fondo di abbonamenti/commissioni o da un consorzio interessato. Questo e cio che mantiene onesta una certificazione tra un audit e l'altro, invece di un controllo una tantum che un attore in malafede puo pianificare in anticipo.",
+    "lab.note": "Perche l'accreditamento non e negoziabile: nell'indagine di Four Corners sui pomodori in Australia nel 2026, il laboratorio forense dietro le scoperte di frode (Source Certain) non era accreditato NATA, il che ha dato ai marchi accusati (Leggo's/Simplot, Coles, Aldi) un'apertura per contestare i risultati sul piano metodologico anziche sui fatti sottostanti. I laboratori partner di Vero Italiano devono essere accreditati fin dal primo giorno per evitare lo stesso stallo.",
 
     "s3.title": "Un'altra modalita di frode: falsa conformita DOP/IGP",
     "s3.sub": "Questo aspetto attraversa trasversalmente lo spettro sopra descritto. Un prodotto puo essere autenticamente realizzato in Italia con ingredienti autenticamente italiani, e commettere comunque una frode dichiarando falsamente una denominazione protetta (DOP/IGP/DOC) che in realta non soddisfa, oppure sfruttando il divario tra un nome completo protetto e un termine generico non protetto.",
