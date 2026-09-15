@@ -378,6 +378,7 @@
       <div class="lab-mode"><strong data-i18n="lab.mode2.h"></strong><span data-i18n="lab.mode2.p"></span></div>
     </div>
     <div class="lab-note" data-i18n="lab.note"></div>
+    <div class="lab-note" style="margin-top:10px;" data-i18n="lab.note2"></div>
   </div>
 
   <h2 class="section-title" data-i18n="s3.title"></h2>
@@ -423,9 +424,9 @@
 var translations = {
   en: {
     h1: "Vero Italiano - Authenticity Spectrum",
-    subtitle: "Not a single pass/fail gate, but a spectrum from fully traceable Italian production to purely evocative branding. Each level combines three independent facts: where it's made, where the ingredients come from, and who owns the brand.",
+    subtitle: "Not a single pass/fail gate, but a spectrum from fully traceable Italian production to an explicit false origin claim. Each level combines three independent facts: where it's made, where the ingredients come from, and who owns the brand, plus whether any claim on the label is actually false.",
     "s1.title": "The seven-level spectrum",
-    "s1.sub": "Levels run from strongest claim to weakest. Real products can sit anywhere on this ladder, and often the label gives no indication of where.",
+    "s1.sub": "Levels run from strongest claim to weakest, then to an outright false claim. Real products can sit anywhere on this ladder, and often the label gives no indication of where.",
 
     "t1.tag": "Fully Verified",
     "t1.title": "Italian-made, ingredients verifiably grown in Italy",
@@ -440,34 +441,34 @@ var translations = {
     "t2.example": "<strong>Real example</strong>Artisan pastificios using Italian-grown grano duro (e.g. Senatore Cappelli wheat), a shrinking category as domestic durum output falls short of demand.",
 
     "t3.tag": "Made in Italy, Sourced Abroad",
-    "t3.title": "Italian-made, key ingredients imported",
-    "t3.desc": "Manufacturing genuinely happens in Italy, but the primary raw material is imported, often undisclosed on the front label.",
-    "t3.flags": "<span>Made in Italy</span><span>Ingredients: imported</span>",
-    "t3.example": "<strong>Real example</strong>Italy is a net importer of olive oil: Spanish, Greek, Tunisian and Moroccan oil is shipped in bulk, bottled in Italy, and sold as \"Italian\" olive oil (Bertolli, Carapelli, Filippo Berio, Sasso and Coricelli were all cited in Italian mislabeling findings). Most \"Italian\" pasta today also runs on Canadian/US durum wheat.",
+    "t3.title": "Italian manufacturing, from full production down to bare packaging, key ingredient imported",
+    "t3.desc": "Real Italian manufacturing happens, somewhere between full processing and just the finishing/packaging step, but the primary raw material is imported, often undisclosed on the front label. This single tier spans a range: the more manufacturing that genuinely happens in Italy, the stronger the claim within it.",
+    "t3.flags": "<span>Made in Italy</span><span>Ingredients: imported</span><span>Undisclosed</span>",
+    "t3.example": "<strong>Real example, full processing</strong>Italy is a net importer of olive oil: Spanish, Greek, Tunisian and Moroccan oil is shipped in bulk, bottled in Italy, and sold as \"Italian\" olive oil (Bertolli, Carapelli, Filippo Berio, Sasso and Coricelli were all cited in Italian mislabeling findings). Most \"Italian\" pasta today also runs on Canadian/US durum wheat.<br><br><strong>Real example, packaging only</strong>Italian processor Petti was found blending, and at times substituting, Chinese tomato paste (from Xinjiang) into cans sold as \"100% Italian tomatoes,\" triggering a 2021 seizure and a 2024 BBC investigation. Prato's Chinese-owned textile factories use the same \"last substantial transformation\" loophole, finishing garments in Italy to legally qualify for \"Made in Italy\" labels.",
 
-    "t4.tag": "Packaging Only",
-    "t4.title": "Italian-packaged, product produced outside Italy",
-    "t4.desc": "The only Italian step is the finishing/packaging stage, sometimes enough to legally claim \"Made in Italy\" under rules based on \"last substantial transformation.\"",
-    "t4.flags": "<span>Packaged in Italy</span><span>Made elsewhere</span>",
-    "t4.example": "<strong>Real example</strong>Prato's Chinese-owned textile factories finish garments in Italy to legally qualify for \"Made in Italy\" labels. In food, Italian processor Petti was found blending, and at times substituting, Chinese tomato paste (from Xinjiang) into cans sold as \"100% Italian tomatoes,\" triggering a 2021 seizure and a 2024 BBC investigation.",
+    "t4.tag": "Packaged Abroad: Italian Brand and Ingredients",
+    "t4.title": "Italian brand, produced abroad, using Italian ingredients",
+    "t4.desc": "A genuine Italian company manufactures locally in a foreign market to serve it efficiently, importing bulk Italian ingredients to preserve authenticity.",
+    "t4.flags": "<span>Italian brand</span><span>Made abroad</span><span>Ingredients: Italy</span>",
+    "t4.example": "<strong>Real example</strong>Some Italian olive oil producers ship bulk Italian-origin oil to be bottled at destination-market facilities rather than in Italy: the ingredient is real, the \"Made in Italy\" bottling claim is not.",
 
-    "t5.tag": "Brand Only + Real Ingredients",
-    "t5.title": "Italian brand, produced abroad, using Italian ingredients",
-    "t5.desc": "A genuine Italian company manufactures locally in a foreign market to serve it efficiently, importing bulk Italian ingredients to preserve authenticity.",
-    "t5.flags": "<span>Italian brand</span><span>Made abroad</span><span>Ingredients: Italy</span>",
-    "t5.example": "<strong>Real example</strong>Some Italian olive oil producers ship bulk Italian-origin oil to be bottled at destination-market facilities rather than in Italy: the ingredient is real, the \"Made in Italy\" bottling claim is not.",
+    "t5.tag": "Brand Only",
+    "t5.title": "Italian brand, produced abroad, primary ingredients from abroad",
+    "t5.desc": "The company and heritage are genuinely Italian, but the product sold in a given market is manufactured locally end-to-end.",
+    "t5.flags": "<span>Italian brand</span><span>Made abroad</span><span>Ingredients: abroad</span>",
+    "t5.example": "<strong>Real example</strong>Barilla and Giovanni Rana both run U.S. manufacturing plants (Barilla: New York/Iowa; Rana: Bartlett, Illinois) using North American wheat for the North American market.",
 
-    "t6.tag": "Brand Only",
-    "t6.title": "Italian brand, produced abroad, primary ingredients from abroad",
-    "t6.desc": "The company and heritage are genuinely Italian, but the product sold in a given market is manufactured locally end-to-end.",
-    "t6.flags": "<span>Italian brand</span><span>Made abroad</span><span>Ingredients: abroad</span>",
-    "t6.example": "<strong>Real example</strong>Barilla and Giovanni Rana both run U.S. manufacturing plants (Barilla: New York/Iowa; Rana: Bartlett, Illinois) using North American wheat for the North American market.",
+    "t6.tag": "Evocative Only",
+    "t6.title": "Italian-sounding, produced abroad, ingredients from abroad, no false claim",
+    "t6.desc": "No Italian ownership, manufacturing, or sourcing, just a name, flag colors, or imagery designed to evoke Italy. This is the \"Italian Sounding\" phenomenon: legal marketing, since it stops short of a literal false claim of origin.",
+    "t6.flags": "<span>No Italian link</span><span>Made abroad</span><span>Not a false claim</span>",
+    "t6.example": "<strong>Real example</strong>Bertolli pasta sauce: brand licensed from the original Italian olive oil house, now owned by Japanese-American company Mizkan and made in Owensboro, Kentucky and Stockton, California with U.S. tomatoes. Industry-wide, \"Italian Sounding\" products generate an estimated 55 to 120 billion euro per year globally, with about 97% of \"Italian\" pasta sauce and 76% of canned tomatoes on the North American market found to be non-Italian.",
 
-    "t7.tag": "Evocative Only",
-    "t7.title": "Italian-sounding, produced abroad, ingredients from abroad",
-    "t7.desc": "No Italian ownership, manufacturing, or sourcing, just a name, flag colors, or imagery designed to evoke Italy. This is the \"Italian Sounding\" phenomenon.",
-    "t7.flags": "<span>No Italian link</span><span>Made abroad</span><span>Ingredients: abroad</span>",
-    "t7.example": "<strong>Real example</strong>Bertolli pasta sauce: brand licensed from the original Italian olive oil house, now owned by Japanese-American company Mizkan and made in Owensboro, Kentucky and Stockton, California with U.S. tomatoes. Industry-wide, \"Italian Sounding\" products generate an estimated 55 to 120 billion euro per year globally, with about 97% of \"Italian\" pasta sauce and 76% of canned tomatoes on the North American market found to be non-Italian.",
+    "t7.tag": "False Origin Claim",
+    "t7.title": "No Italian content whatsoever, explicit false claim of origin",
+    "t7.desc": "Unlike the tier above, this is not evocative styling, it is a specific, literal, false claim of national origin on a product with zero genuine tie to that origin. The most severe pattern on the spectrum: no real content and an active lie about it.",
+    "t7.flags": "<span>No Italian link</span><span>Made abroad</span><span>False claim</span>",
+    "t7.example": "<strong>Real example</strong>Australia's 2026 Four Corners investigation found Leggo's (Simplot), Coles and Aldi selling Chinese-grown tomatoes labeled and marketed as \"Australian\" and \"Italian\" in the same product lines, confirmed by forensic isotope and DNA testing, prompting an ACCC inquiry into the labeling claims.",
 
     "s2.title": "The verification engine: documents vs. the field",
     "s2.sub": "Every level above is a claim on paper. VeriPura tests the claim against two independent evidence streams and reconciles them, this is what turns a self-reported level into a verified one.",
@@ -484,8 +485,8 @@ var translations = {
     "engine.ok": "<strong>Within expected range</strong>Declared volume is consistent with satellite-estimated yield capacity, the claim supports the certification level requested.",
     "engine.flag": "<strong>Flagged for review</strong>Declared volume exceeds plausible field output, signaling undisclosed blending, substitution, or overstated origin (as in the Petti tomato-paste case).",
     "engine.catchesHeading": "What this specifically catches",
-    "engine.catch1": "Level 3, undisclosed imported ingredients",
-    "engine.catch2": "Level 4, packaging-only \"Made in Italy\" claims",
+    "engine.catch1": "Level C, undisclosed imported ingredients across the full production-to-packaging range",
+    "engine.catch2": "Level G, an explicit false origin claim with no genuine content behind it",
     "engine.catch3": "Fraud #4, undisclosed origin substitution",
     "engine.catch4": "Volume overstatement beyond real production capacity",
 
@@ -498,6 +499,7 @@ var translations = {
     "lab.mode2.h": "Risk-weighted random testing",
     "lab.mode2.p": "Certified lots are periodically and unpredictably selected for surprise testing, weighted toward higher-value products and any prior discrepancy history, funded from the subscription/fee pool or by an interested consortium. This is what keeps a certification honest between audits, rather than a one-time check a bad actor can plan around.",
     "lab.note": "Why accreditation is non-negotiable: in Australia's 2026 Four Corners tomato investigation, the forensic lab behind the fraud findings (Source Certain) was not NATA-accredited, which gave the accused brands (Leggo's/Simplot, Coles, Aldi) an opening to dispute the results on methodology grounds rather than the underlying facts. Vero Italiano's lab partners must be accredited from day one to avoid the same standoff.",
+    "lab.note2": "Why one mark is never enough: Prosciutto di Parma's fire-branded crown mark was itself defeated once already. Around 2008, investigators found blacksmiths in Ferrara had forged their own branding machines and stamped the DOP crown onto roughly 1,000 hams that had never earned it. A single physical mark, once its design is understood, becomes a target. Reconciling multiple independent evidence streams, documents, satellite data, and lab testing, is structurally harder to defeat than replicating one stamp or one chip.",
 
     "s3.title": "A separate failure mode: false DOP/IGP compliance",
     "s3.sub": "This cuts across the spectrum above. A product can be genuinely made in Italy from genuine Italian ingredients, and still commit fraud by falsely claiming a protected designation (DOP/IGP/DOC) it doesn't actually meet, or by exploiting the gap between a protected full name and an unprotected generic term.",
@@ -526,13 +528,13 @@ var translations = {
     "f6.desc": "Outright fake product using a protected name or trademarked packaging design with no legitimate claim at all, a straightforward IP and food-safety crime.",
     "f6.example": "<strong>Real example</strong>Seized shipments of counterfeit Parmigiano Reggiano-branded wheels with forged consortium markings, prompting the current chip-tracing anti-counterfeiting rollout.",
 
-    footer: "Sources: Reuters/Inforum (durum wheat imports), BBC Panorama and Food Fraud Advisors (Petti tomato paste), Forbes/Quartz (Parmigiano Reggiano chip tracing and Castle Cheese), FashionNetwork/YaleGlobal (Prato \"Made in Italy\"), Wikipedia/FoodNavigator (Bertolli ownership), Pasta Affair and CBC (olive oil grade mislabeling), La Voce di New York/ANSA (Italian Sounding market size).<br>Internal working reference, VeriPura / Vero Italiano. Not legal or regulatory guidance."
+    footer: "Sources: ABC News/Four Corners (Chinese tomatoes sold as Australian/Italian), Reuters/Inforum (durum wheat imports), BBC Panorama and Food Fraud Advisors (Petti tomato paste), Forbes/Quartz (Parmigiano Reggiano chip tracing and Castle Cheese), FashionNetwork/YaleGlobal (Prato \"Made in Italy\"), Wikipedia/FoodNavigator (Bertolli ownership), Pasta Affair and CBC (olive oil grade mislabeling), La Voce di New York/ANSA (Italian Sounding market size).<br>Internal working reference, VeriPura / Vero Italiano. Not legal or regulatory guidance."
   },
   it: {
     h1: "Vero Italiano - Spettro di Autenticita",
-    subtitle: "Non un semplice cancello superato/non superato, ma uno spettro che va dalla produzione italiana pienamente tracciabile fino al branding puramente evocativo. Ogni livello combina tre fatti indipendenti: dove viene prodotto, da dove provengono gli ingredienti e chi possiede il marchio.",
+    subtitle: "Non un semplice cancello superato/non superato, ma uno spettro che va dalla produzione italiana pienamente tracciabile fino a una dichiarazione di origine esplicitamente falsa. Ogni livello combina tre fatti indipendenti: dove viene prodotto, da dove provengono gli ingredienti e chi possiede il marchio, oltre a se una dichiarazione in etichetta e effettivamente falsa.",
     "s1.title": "Lo spettro a sette livelli",
-    "s1.sub": "I livelli vanno dalla dichiarazione piu forte alla piu debole. I prodotti reali possono collocarsi ovunque su questa scala, e spesso l'etichetta non da alcuna indicazione su dove.",
+    "s1.sub": "I livelli vanno dalla dichiarazione piu forte alla piu debole, fino a una dichiarazione apertamente falsa. I prodotti reali possono collocarsi ovunque su questa scala, e spesso l'etichetta non da alcuna indicazione su dove.",
 
     "t1.tag": "Pienamente Verificato",
     "t1.title": "Prodotto in Italia, ingredienti verificabilmente coltivati in Italia",
@@ -547,34 +549,34 @@ var translations = {
     "t2.example": "<strong>Esempio reale</strong>Pastifici artigianali che usano grano duro italiano (ad esempio grano Senatore Cappelli), una categoria in calo poiche la produzione nazionale di grano duro non copre la domanda.",
 
     "t3.tag": "Prodotto in Italia, Approvvigionato all'Estero",
-    "t3.title": "Prodotto in Italia, ingredienti chiave importati",
-    "t3.desc": "La produzione avviene realmente in Italia, ma la materia prima principale e importata, spesso senza indicazione in etichetta frontale.",
-    "t3.flags": "<span>Made in Italy</span><span>Ingredienti: importati</span>",
-    "t3.example": "<strong>Esempio reale</strong>L'Italia e un importatore netto di olio d'oliva: olio spagnolo, greco, tunisino e marocchino viene spedito alla rinfusa, imbottigliato in Italia e venduto come olio d'oliva \"italiano\" (Bertolli, Carapelli, Filippo Berio, Sasso e Coricelli sono stati tutti citati in accertamenti italiani su etichettature scorrette). Anche gran parte della pasta \"italiana\" oggi usa grano duro canadese o statunitense.",
+    "t3.title": "Produzione italiana, dalla lavorazione completa al solo confezionamento, ingrediente chiave importato",
+    "t3.desc": "La produzione italiana e reale, in una misura che va dalla lavorazione completa alla sola fase di finitura/confezionamento, ma la materia prima principale e importata, spesso senza indicazione in etichetta frontale. Questo livello copre un intervallo: quanta piu produzione avviene realmente in Italia, tanto piu forte e la dichiarazione al suo interno.",
+    "t3.flags": "<span>Made in Italy</span><span>Ingredienti: importati</span><span>Non dichiarato</span>",
+    "t3.example": "<strong>Esempio reale, lavorazione completa</strong>L'Italia e un importatore netto di olio d'oliva: olio spagnolo, greco, tunisino e marocchino viene spedito alla rinfusa, imbottigliato in Italia e venduto come olio d'oliva \"italiano\" (Bertolli, Carapelli, Filippo Berio, Sasso e Coricelli sono stati tutti citati in accertamenti italiani su etichettature scorrette). Anche gran parte della pasta \"italiana\" oggi usa grano duro canadese o statunitense.<br><br><strong>Esempio reale, solo confezionamento</strong>Il produttore italiano Petti e stato trovato a miscelare, e in alcuni casi sostituire, concentrato di pomodoro cinese (dallo Xinjiang) in scatolame venduto come \"pomodoro 100% italiano\", con un sequestro nel 2021 e un'inchiesta della BBC nel 2024. Le fabbriche tessili di proprieta cinese a Prato sfruttano la stessa scappatoia dell'\"ultima trasformazione sostanziale\", rifinendo i capi in Italia per qualificarsi legalmente per l'etichetta \"Made in Italy\".",
 
-    "t4.tag": "Solo Confezionamento",
-    "t4.title": "Confezionato in Italia, prodotto realizzato fuori dall'Italia",
-    "t4.desc": "L'unica fase italiana e la finitura o il confezionamento, a volte sufficiente per rivendicare legalmente \"Made in Italy\" secondo le norme basate sull'\"ultima trasformazione sostanziale.\"",
-    "t4.flags": "<span>Confezionato in Italia</span><span>Prodotto altrove</span>",
-    "t4.example": "<strong>Esempio reale</strong>Le fabbriche tessili di proprieta cinese a Prato rifiniscono i capi in Italia per qualificarsi legalmente per l'etichetta \"Made in Italy\". Nel settore alimentare, il produttore italiano Petti e stato trovato a miscelare, e in alcuni casi sostituire, concentrato di pomodoro cinese (dallo Xinjiang) in scatolame venduto come \"pomodoro 100% italiano\", con un sequestro nel 2021 e un'inchiesta della BBC nel 2024.",
+    "t4.tag": "Confezionato all'Estero: Marchio e Ingredienti Italiani",
+    "t4.title": "Marchio italiano, prodotto all'estero, con ingredienti italiani",
+    "t4.desc": "Un'azienda italiana autentica produce localmente in un mercato estero per servirlo in modo efficiente, importando ingredienti italiani sfusi per preservare l'autenticita.",
+    "t4.flags": "<span>Marchio italiano</span><span>Prodotto all'estero</span><span>Ingredienti: Italia</span>",
+    "t4.example": "<strong>Esempio reale</strong>Alcuni produttori italiani di olio d'oliva spediscono olio di origine italiana sfuso per essere imbottigliato in impianti nel mercato di destinazione anziche in Italia: l'ingrediente e reale, la dichiarazione di imbottigliamento \"Made in Italy\" non lo e.",
 
-    "t5.tag": "Solo Marchio + Ingredienti Reali",
-    "t5.title": "Marchio italiano, prodotto all'estero, con ingredienti italiani",
-    "t5.desc": "Un'azienda italiana autentica produce localmente in un mercato estero per servirlo in modo efficiente, importando ingredienti italiani sfusi per preservare l'autenticita.",
-    "t5.flags": "<span>Marchio italiano</span><span>Prodotto all'estero</span><span>Ingredienti: Italia</span>",
-    "t5.example": "<strong>Esempio reale</strong>Alcuni produttori italiani di olio d'oliva spediscono olio di origine italiana sfuso per essere imbottigliato in impianti nel mercato di destinazione anziche in Italia: l'ingrediente e reale, la dichiarazione di imbottigliamento \"Made in Italy\" non lo e.",
+    "t5.tag": "Solo Marchio",
+    "t5.title": "Marchio italiano, prodotto all'estero, ingredienti principali dall'estero",
+    "t5.desc": "L'azienda e la sua eredita sono autenticamente italiane, ma il prodotto venduto in un dato mercato e fabbricato localmente dall'inizio alla fine.",
+    "t5.flags": "<span>Marchio italiano</span><span>Prodotto all'estero</span><span>Ingredienti: estero</span>",
+    "t5.example": "<strong>Esempio reale</strong>Barilla e Giovanni Rana gestiscono entrambi stabilimenti produttivi negli Stati Uniti (Barilla: New York/Iowa; Rana: Bartlett, Illinois) usando grano nordamericano per il mercato nordamericano.",
 
-    "t6.tag": "Solo Marchio",
-    "t6.title": "Marchio italiano, prodotto all'estero, ingredienti principali dall'estero",
-    "t6.desc": "L'azienda e la sua eredita sono autenticamente italiane, ma il prodotto venduto in un dato mercato e fabbricato localmente dall'inizio alla fine.",
-    "t6.flags": "<span>Marchio italiano</span><span>Prodotto all'estero</span><span>Ingredienti: estero</span>",
-    "t6.example": "<strong>Esempio reale</strong>Barilla e Giovanni Rana gestiscono entrambi stabilimenti produttivi negli Stati Uniti (Barilla: New York/Iowa; Rana: Bartlett, Illinois) usando grano nordamericano per il mercato nordamericano.",
+    "t6.tag": "Solo Evocativo",
+    "t6.title": "Nome dal suono italiano, prodotto all'estero, ingredienti dall'estero, nessuna dichiarazione falsa",
+    "t6.desc": "Nessun legame di proprieta, produzione o approvvigionamento italiano, solo un nome, i colori della bandiera o immagini pensate per evocare l'Italia. Questo e il fenomeno dell'\"Italian Sounding\": marketing legale, poiche si ferma prima di una dichiarazione di origine letteralmente falsa.",
+    "t6.flags": "<span>Nessun legame italiano</span><span>Prodotto all'estero</span><span>Non una dichiarazione falsa</span>",
+    "t6.example": "<strong>Esempio reale</strong>Il sugo Bertolli: marchio concesso in licenza dalla storica azienda italiana di olio d'oliva, ora di proprieta della societa giapponese-americana Mizkan e prodotto a Owensboro, Kentucky e Stockton, California con pomodori statunitensi. A livello di settore, i prodotti \"Italian Sounding\" generano una stima di 55-120 miliardi di euro l'anno nel mondo, con circa il 97% dei sughi \"italiani\" e il 76% dei pomodori in scatola sul mercato nordamericano risultati non italiani.",
 
-    "t7.tag": "Solo Evocativo",
-    "t7.title": "Nome dal suono italiano, prodotto all'estero, ingredienti dall'estero",
-    "t7.desc": "Nessun legame di proprieta, produzione o approvvigionamento italiano, solo un nome, i colori della bandiera o immagini pensate per evocare l'Italia. Questo e il fenomeno dell'\"Italian Sounding\".",
-    "t7.flags": "<span>Nessun legame italiano</span><span>Prodotto all'estero</span><span>Ingredienti: estero</span>",
-    "t7.example": "<strong>Esempio reale</strong>Il sugo Bertolli: marchio concesso in licenza dalla storica azienda italiana di olio d'oliva, ora di proprieta della societa giapponese-americana Mizkan e prodotto a Owensboro, Kentucky e Stockton, California con pomodori statunitensi. A livello di settore, i prodotti \"Italian Sounding\" generano una stima di 55-120 miliardi di euro l'anno nel mondo, con circa il 97% dei sughi \"italiani\" e il 76% dei pomodori in scatola sul mercato nordamericano risultati non italiani.",
+    "t7.tag": "Dichiarazione di Origine Falsa",
+    "t7.title": "Nessun contenuto italiano, dichiarazione di origine esplicitamente falsa",
+    "t7.desc": "A differenza del livello precedente, non si tratta di uno stile evocativo: e una dichiarazione specifica, letterale e falsa di origine nazionale su un prodotto senza alcun legame genuino con quell'origine. Lo schema piu grave dello spettro: nessun contenuto reale e una menzogna attiva al riguardo.",
+    "t7.flags": "<span>Nessun legame italiano</span><span>Prodotto all'estero</span><span>Dichiarazione falsa</span>",
+    "t7.example": "<strong>Esempio reale</strong>L'inchiesta di Four Corners in Australia nel 2026 ha rilevato che Leggo's (Simplot), Coles e Aldi vendevano pomodori coltivati in Cina etichettati e commercializzati come \"australiani\" e \"italiani\" nelle stesse linee di prodotto, confermato da test forensi isotopici e del DNA, che hanno spinto un'indagine dell'ACCC sulle dichiarazioni in etichetta.",
 
     "s2.title": "Il motore di verifica: documenti contro il campo",
     "s2.sub": "Ogni livello sopra descritto e una dichiarazione su carta. VeriPura verifica la dichiarazione confrontandola con due flussi di evidenza indipendenti e li riconcilia: questo e cio che trasforma un livello autodichiarato in uno verificato.",
@@ -591,8 +593,8 @@ var translations = {
     "engine.ok": "<strong>Entro l'intervallo previsto</strong>Il volume dichiarato e coerente con la capacita di resa stimata via satellite: la dichiarazione supporta il livello di certificazione richiesto.",
     "engine.flag": "<strong>Segnalato per revisione</strong>Il volume dichiarato supera la produzione plausibile sul campo, segnalando possibile miscelazione non dichiarata, sostituzione o origine sovrastimata (come nel caso Petti del concentrato di pomodoro).",
     "engine.catchesHeading": "Cosa individua nello specifico",
-    "engine.catch1": "Livello 3, ingredienti importati non dichiarati",
-    "engine.catch2": "Livello 4, dichiarazioni \"Made in Italy\" basate solo sul confezionamento",
+    "engine.catch1": "Livello C, ingredienti importati non dichiarati, su tutto l'intervallo dalla lavorazione completa al confezionamento",
+    "engine.catch2": "Livello G, una dichiarazione di origine esplicitamente falsa senza alcun contenuto reale dietro",
     "engine.catch3": "Frode #4, sostituzione di origine non dichiarata",
     "engine.catch4": "Sovrastima del volume oltre la reale capacita produttiva",
 
@@ -605,6 +607,7 @@ var translations = {
     "lab.mode2.h": "Test casuali ponderati per rischio",
     "lab.mode2.p": "I lotti certificati vengono selezionati periodicamente e in modo imprevedibile per test a sorpresa, con maggiore frequenza per i prodotti di maggior valore e per chi ha una storia di discrepanze pregresse, finanziati dal fondo di abbonamenti/commissioni o da un consorzio interessato. Questo e cio che mantiene onesta una certificazione tra un audit e l'altro, invece di un controllo una tantum che un attore in malafede puo pianificare in anticipo.",
     "lab.note": "Perche l'accreditamento non e negoziabile: nell'indagine di Four Corners sui pomodori in Australia nel 2026, il laboratorio forense dietro le scoperte di frode (Source Certain) non era accreditato NATA, il che ha dato ai marchi accusati (Leggo's/Simplot, Coles, Aldi) un'apertura per contestare i risultati sul piano metodologico anziche sui fatti sottostanti. I laboratori partner di Vero Italiano devono essere accreditati fin dal primo giorno per evitare lo stesso stallo.",
+    "lab.note2": "Perche un solo marchio non basta mai: il marchio a fuoco a forma di corona del Prosciutto di Parma e gia stato violato una volta. Intorno al 2008, gli investigatori scoprirono che alcuni fabbri a Ferrara avevano forgiato proprie macchine marchiatrici, apponendo il marchio DOP a corona su circa 1.000 prosciutti che non lo avevano mai meritato. Un singolo marchio fisico, una volta compreso il suo design, diventa un bersaglio. Riconciliare piu flussi di evidenza indipendenti, documenti, dati satellitari e test di laboratorio, e strutturalmente piu difficile da aggirare rispetto alla replica di un singolo timbro o microchip.",
 
     "s3.title": "Un'altra modalita di frode: falsa conformita DOP/IGP",
     "s3.sub": "Questo aspetto attraversa trasversalmente lo spettro sopra descritto. Un prodotto puo essere autenticamente realizzato in Italia con ingredienti autenticamente italiani, e commettere comunque una frode dichiarando falsamente una denominazione protetta (DOP/IGP/DOC) che in realta non soddisfa, oppure sfruttando il divario tra un nome completo protetto e un termine generico non protetto.",
@@ -633,7 +636,7 @@ var translations = {
     "f6.desc": "Prodotto completamente falso che utilizza un nome protetto o un design di confezione registrato senza alcuna base legittima, un crimine diretto di proprieta intellettuale e sicurezza alimentare.",
     "f6.example": "<strong>Esempio reale</strong>Sequestri di forme contraffatte a marchio Parmigiano Reggiano con marchiature del consorzio falsificate, che hanno spinto l'attuale introduzione di microchip anticontraffazione.",
 
-    footer: "Fonti: Reuters/Inforum (importazioni di grano duro), BBC Panorama e Food Fraud Advisors (concentrato di pomodoro Petti), Forbes/Quartz (tracciamento a chip del Parmigiano Reggiano e caso Castle Cheese), FashionNetwork/YaleGlobal (\"Made in Italy\" a Prato), Wikipedia/FoodNavigator (proprieta di Bertolli), Pasta Affair e CBC (etichettatura errata della categoria dell'olio d'oliva), La Voce di New York/ANSA (dimensione del mercato \"Italian Sounding\").<br>Riferimento di lavoro interno, VeriPura / Vero Italiano. Non costituisce consulenza legale o normativa."
+    footer: "Fonti: ABC News/Four Corners (pomodori cinesi venduti come australiani/italiani), Reuters/Inforum (importazioni di grano duro), BBC Panorama e Food Fraud Advisors (concentrato di pomodoro Petti), Forbes/Quartz (tracciamento a chip del Parmigiano Reggiano e caso Castle Cheese), FashionNetwork/YaleGlobal (\"Made in Italy\" a Prato), Wikipedia/FoodNavigator (proprieta di Bertolli), Pasta Affair e CBC (etichettatura errata della categoria dell'olio d'oliva), La Voce di New York/ANSA (dimensione del mercato \"Italian Sounding\").<br>Riferimento di lavoro interno, VeriPura / Vero Italiano. Non costituisce consulenza legale o normativa."
   }
 };
 
