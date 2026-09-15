@@ -221,6 +221,17 @@
     .outcomes{grid-template-columns:1fr;}
     .controls{position:static;justify-content:center;margin-bottom:16px;}
   }
+
+  .page-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;align-items:center;font-size:12.5px;margin:0 0 8px;}
+  .page-nav-link{color:var(--muted);text-decoration:none;font-weight:700;padding:2px;}
+  .page-nav-link:hover{color:var(--green);}
+  .page-nav-link.page-nav-current{color:var(--ink);cursor:default;}
+  .page-nav-sep{color:var(--line);}
+  .breadcrumbs{display:flex;justify-content:center;gap:6px;font-size:11.5px;color:var(--muted);margin:0 0 22px;}
+  .breadcrumbs a{color:var(--green);text-decoration:none;}
+  .breadcrumbs a:hover{text-decoration:underline;}
+  .breadcrumbs .crumb-sep{opacity:.6;}
+  .breadcrumbs .crumb-current{color:var(--ink);font-weight:600;}
 </style>
 </head>
 <body>
@@ -237,6 +248,17 @@
     <h1 data-i18n="h1"></h1>
     <p class="subtitle" data-i18n="subtitle"></p>
   </header>
+
+  <nav class="page-nav">
+    <a href="https://vero-italiano.github.io/Vero-/" class="page-nav-link" data-i18n="nav.home"></a>
+    <span class="page-nav-sep">&middot;</span>
+    <span class="page-nav-link page-nav-current" data-i18n="nav.spectrum"></span>
+    <span class="page-nav-sep">&middot;</span>
+    <a href="https://vero-italiano.github.io/MVP-/" class="page-nav-link" data-i18n="nav.mvp"></a>
+  </nav>
+  <nav class="breadcrumbs">
+    <a href="https://vero-italiano.github.io/Vero-/" data-i18n="nav.home"></a><span class="crumb-sep">&rsaquo;</span><span class="crumb-current" data-i18n="nav.spectrum"></span>
+  </nav>
 
   <h2 class="section-title" data-i18n="s1.title"></h2>
   <p class="section-sub" data-i18n="s1.sub"></p>
@@ -425,6 +447,9 @@ var translations = {
   en: {
     h1: "Vero Italiano - Authenticity Spectrum",
     subtitle: "Not a single pass/fail gate, but a spectrum from fully traceable Italian production to an explicit false origin claim. Each level combines three independent facts: where it's made, where the ingredients come from, and who owns the brand, plus whether any claim on the label is actually false.",
+    "nav.home": "Main Menu",
+    "nav.spectrum": "Authenticity Spectrum",
+    "nav.mvp": "MVP &amp; Go-to-Market",
     "s1.title": "The seven-level spectrum",
     "s1.sub": "Levels run from strongest claim to weakest, then to an outright false claim. Real products can sit anywhere on this ladder, and often the label gives no indication of where.",
 
@@ -533,6 +558,9 @@ var translations = {
   it: {
     h1: "Vero Italiano - Spettro di Autenticita",
     subtitle: "Non un semplice cancello superato/non superato, ma uno spettro che va dalla produzione italiana pienamente tracciabile fino a una dichiarazione di origine esplicitamente falsa. Ogni livello combina tre fatti indipendenti: dove viene prodotto, da dove provengono gli ingredienti e chi possiede il marchio, oltre a se una dichiarazione in etichetta e effettivamente falsa.",
+    "nav.home": "Menu Principale",
+    "nav.spectrum": "Spettro di Autenticita",
+    "nav.mvp": "MVP e Go-to-Market",
     "s1.title": "Lo spettro a sette livelli",
     "s1.sub": "I livelli vanno dalla dichiarazione piu forte alla piu debole, fino a una dichiarazione apertamente falsa. I prodotti reali possono collocarsi ovunque su questa scala, e spesso l'etichetta non da alcuna indicazione su dove.",
 
